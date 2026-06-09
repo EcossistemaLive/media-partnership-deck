@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media & Partnership Deck — Cúpula CEO 2026 | ViDi</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D08A;
+    --gold-dim: rgba(201,168,76,0.15);
+    --dark: #0A0A0A;
+    --dark2: #111111;
+    --dark3: #1A1A1A;
+    --dark4: #222222;
+    --text: #F5F0E8;
+    --text-muted: #ABABAB;
+    --accent: #7B6EF6;
+    --green: #51CF66;
+    --diamond: #A8D8EA;
+    --gold-tier: #C9A84C;
+    --silver: #C0C0C0;
+    --bronze: #CD7F32;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--dark); background-image: url('diamond_pattern.png'); background-blend-mode: soft-light; background-size: 300px; color: var(--text); font-family: 'Roboto', sans-serif; line-height: 1.6; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--dark2); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,10,0.95); backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3rem;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: .9rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .nav-logo svg {
+    height: 30px;
+    width: auto;
+  }
+  .nav-logo svg .cls-2 {
+    fill: #ffffff !important;
+  }
+  .nav-logo svg .cls-1 {
+    fill: var(--gold) !important;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: .82rem; transition: color .2s; letter-spacing: .05em; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(to bottom, rgba(10,10,10,0.6), var(--dark)),
+      radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.18) 0%, transparent 55%),
+      url('colosseum_dome.png') center/cover no-repeat;
+    background-color: var(--dark);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(201,168,76,0.025) 60px, rgba(201,168,76,0.025) 61px),
+      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(201,168,76,0.025) 60px, rgba(201,168,76,0.025) 61px);
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.35);
+    color: var(--gold); padding: .45rem 1.4rem; border-radius: 50px;
+    font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 800; line-height: 1.05; margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 35%, var(--gold) 70%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text-muted);
+    max-width: 620px; margin-bottom: 3.5rem; line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex; gap: 3.5rem; justify-content: center; flex-wrap: wrap;
+    padding: 2.5rem 3rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+  }
+  .stat { text-align: center; }
+  .stat-num { font-size: 2.2rem; font-weight: 900; color: var(--gold); font-family: 'Playfair Display', serif; }
+  .stat-lbl { font-size: .72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .15em; margin-top: .2rem; }
+  .scroll-hint {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    color: var(--text-muted); font-size: .75rem; animation: bounce 2s infinite; display: flex; flex-direction: column; align-items: center; gap: .4rem;
+  }
+  .scroll-hint::after { content: '▼'; color: var(--gold); }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent); margin: 0 2rem; }
+  .section-tag { color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; margin-bottom: .75rem; }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; line-height: 1.1; margin-bottom: 1rem;
+  }
+  .section-lead { color: var(--text-muted); font-size: 1.05rem; max-width: 680px; line-height: 1.8; margin-bottom: 3rem; }
+
+  /* ── EVENTO OVERVIEW ── */
+  .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .overview-card {
+    background: var(--dark3); border: 1px solid rgba(201,168,76,0.12);
+    border-radius: .75rem; padding: 1.75rem;
+    transition: border-color .3s, transform .3s;
+  }
+  .overview-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-3px); }
+  .overview-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .overview-card h3 { font-size: 1rem; font-weight: 700; color: var(--gold); margin-bottom: .5rem; letter-spacing: .05em; text-transform: uppercase; font-size: .8rem; }
+  .overview-card p { color: var(--text); font-size: .95rem; line-height: 1.6; }
+
+  /* ── AUDIENCE ── */
+  .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+  .audience-pill {
+    background: var(--dark3); border: 1px solid rgba(201,168,76,0.12);
+    border-radius: .75rem; padding: 1.5rem 1.25rem;
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: .6rem;
+  }
+  .audience-pill .pct { font-size: 2rem; font-weight: 900; color: var(--gold); font-family: 'Playfair Display', serif; }
+  .audience-pill span { font-size: .82rem; color: var(--text-muted); line-height: 1.4; }
+
+  /* ── WHY SECTION ── */
+  .why-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+  .why-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--dark3); border: 1px solid rgba(201,168,76,0.1); border-radius: .75rem; padding: 1.5rem;
+  }
+  .why-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: .1rem; }
+  .why-item h4 { font-size: .9rem; font-weight: 700; color: var(--text); margin-bottom: .35rem; }
+  .why-item p { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── COTAS ── */
+  .cotas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+  .cota-card {
+    background: var(--dark3); border-radius: 1rem; padding: 2rem 1.75rem;
+    display: flex; flex-direction: column; gap: .75rem;
+    position: relative; overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .cota-card:hover { transform: translateY(-6px); }
+  .cota-card.destaque {
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 40px rgba(201,168,76,0.15);
+  }
+  .cota-card.destaque::before {
+    content: 'MAIS POPULAR'; position: absolute; top: 1rem; right: -2rem;
+    background: var(--gold); color: var(--dark); font-size: .6rem; font-weight: 900;
+    letter-spacing: .15em; padding: .25rem 2.5rem; transform: rotate(45deg);
+  }
+  .cota-badge {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .7rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase;
+    padding: .3rem .9rem; border-radius: 50px; width: fit-content;
+  }
+  .badge-diamante { background: rgba(168,216,234,0.15); color: var(--diamond); border: 1px solid rgba(168,216,234,0.3); }
+  .badge-ouro     { background: rgba(201,168,76,0.15);  color: var(--gold);    border: 1px solid rgba(201,168,76,0.3); }
+  .badge-prata    { background: rgba(192,192,192,0.12); color: var(--silver);  border: 1px solid rgba(192,192,192,0.25); }
+  .badge-bronze   { background: rgba(205,127,50,0.12);  color: var(--bronze);  border: 1px solid rgba(205,127,50,0.25); }
+  .badge-ab       { background: rgba(81,207,102,0.12);  color: var(--green);   border: 1px solid rgba(81,207,102,0.25); }
+  .cota-nome { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; }
+  .cota-diamante-color { color: var(--diamond); }
+  .cota-ouro-color     { color: var(--gold); }
+  .cota-prata-color    { color: var(--silver); }
+  .cota-bronze-color   { color: var(--bronze); }
+  .cota-ab-color       { color: var(--green); }
+  .cota-vagas { font-size: .75rem; color: var(--text-muted); letter-spacing: .1em; }
+  .cota-price { font-size: 2rem; font-weight: 900; margin: .5rem 0; }
+  .cota-price span { font-size: .9rem; font-weight: 400; color: var(--text-muted); }
+  .cota-price-obs { font-size: .78rem; color: var(--text-muted); margin-top: -.5rem; margin-bottom: .5rem; }
+  .cota-sep { height: 1px; background: rgba(201,168,76,0.15); margin: .75rem 0; }
+  .cota-benefits { list-style: none; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
+  .cota-benefits li { font-size: .84rem; color: var(--text-muted); display: flex; gap: .6rem; align-items: flex-start; line-height: 1.5; }
+  .cota-benefits li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; font-size: .8rem; margin-top: .05rem; }
+  .cota-benefits li.dim::before { color: var(--text-muted); content: '—'; }
+  .cota-benefits li.dim { opacity: .4; }
+  .cota-cta {
+    margin-top: 1.25rem; padding: .75rem; border-radius: .5rem;
+    text-align: center; font-size: .82rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; border: none; cursor: pointer; transition: opacity .2s;
+    text-decoration: none; display: block;
+  }
+  .cta-diamante { background: var(--diamond); color: var(--dark); }
+  .cta-ouro     { background: var(--gold);    color: var(--dark); }
+  .cta-prata    { background: transparent; border: 1px solid var(--silver); color: var(--silver); }
+  .cta-bronze   { background: transparent; border: 1px solid var(--bronze); color: var(--bronze); }
+  .cta-ab       { background: transparent; border: 1px solid var(--green);  color: var(--green); }
+  .cota-cta:hover { opacity: .8; }
+
+  /* ── TABELA COMPARATIVA ── */
+  .table-wrap { overflow-x: auto; border-radius: .75rem; border: 1px solid rgba(201,168,76,0.12); }
+  table { width: 100%; border-collapse: collapse; min-width: 700px; }
+  thead tr { background: var(--dark3); }
+  th { padding: 1rem 1.25rem; text-align: center; font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; border-bottom: 1px solid rgba(201,168,76,0.2); }
+  th:first-child { text-align: left; }
+  td { padding: .85rem 1.25rem; text-align: center; font-size: .85rem; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+  td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(201,168,76,0.03); }
+  .check { color: var(--green); font-size: 1rem; }
+  .cross { color: rgba(255,255,255,0.2); font-size: .9rem; }
+  .col-d { color: var(--diamond); font-weight: 700; }
+  .col-o { color: var(--gold);    font-weight: 700; }
+  .col-p { color: var(--silver);  font-weight: 600; }
+  .col-b { color: var(--bronze);  font-weight: 600; }
+  .col-ab{ color: var(--green);   font-weight: 600; }
+  th.col-d { color: var(--diamond); }
+  th.col-o { color: var(--gold); }
+  th.col-p { color: var(--silver); }
+  th.col-b { color: var(--bronze); }
+  th.col-ab{ color: var(--green); }
+  .cat-row td { background: rgba(201,168,76,0.05); font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); padding: .6rem 1.25rem; }
+
+  /* ── PARCEIROS DESTAQUE ── */
+  .parceiros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .parceiro-card {
+    background: var(--dark3); border: 1px solid rgba(201,168,76,0.12);
+    border-radius: .75rem; padding: 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .parceiro-tag { font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+  .parceiro-nome { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; }
+  .parceiro-desc { font-size: .88rem; color: var(--text-muted); line-height: 1.7; }
+  .parceiro-status {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+    padding: .3rem .8rem; border-radius: 50px; width: fit-content;
+  }
+  .status-negociacao { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+  .status-aberto     { background: rgba(81,207,102,0.12);  color: var(--green); border: 1px solid rgba(81,207,102,0.3); }
+
+  /* ── TIMELINE ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: .4rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1)); }
+  .timeline-item { position: relative; padding: 0 0 2rem 1.5rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.65rem; top: .3rem; width: 12px; height: 12px; background: var(--gold); border-radius: 50%; border: 2px solid var(--dark); }
+  .tl-date { font-size: .72rem; color: var(--gold); font-weight: 700; letter-spacing: .15em; text-transform: uppercase; margin-bottom: .3rem; }
+  .tl-title { font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
+  .tl-desc { font-size: .84rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── CONTATO / CTA FINAL ── */
+  .cta-section {
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, transparent 70%), var(--dark2);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 6rem 2rem; text-align: center;
+  }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
+  .cta-section p { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.8; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--dark); font-weight: 800;
+    padding: 1rem 2.5rem; border-radius: .5rem; text-decoration: none;
+    font-size: .9rem; letter-spacing: .1em; text-transform: uppercase;
+    transition: opacity .2s, transform .2s; display: inline-block;
+  }
+  .btn-primary:hover { opacity: .88; transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent; color: var(--gold); font-weight: 700;
+    padding: 1rem 2.5rem; border-radius: .5rem; text-decoration: none;
+    font-size: .9rem; letter-spacing: .1em; text-transform: uppercase;
+    border: 1px solid rgba(201,168,76,0.4); transition: border-color .2s, transform .2s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+  /* ── CONTATOS ── */
+  .contacts-row { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+  .contact-item { display: flex; flex-direction: column; align-items: center; gap: .3rem; }
+  .contact-label { font-size: .7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .15em; }
+  .contact-val { font-size: .95rem; font-weight: 600; color: var(--text); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark2); border-top: 1px solid rgba(201,168,76,0.08);
+    padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { font-size: .78rem; color: var(--text-muted); }
+  .footer-logo { font-weight: 800; color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.25);
+    border-left: 3px solid var(--gold); border-radius: .5rem; padding: 1.5rem 2rem; margin: 2rem 0;
+  }
+  .highlight-box p { font-size: .9rem; color: var(--text); line-height: 1.8; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 2rem; padding: 1.5rem; }
+    section { padding: 4rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">
+    <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" aria-label="Logo ViDi">
+      <g>
+        <path class="cls-2" d="M687.78,512.56l-7.66-6.29c-1.04-.85-1.64-2.13-1.64-3.47v-129.66c0-1.35.6-2.62,1.64-3.47l7.66-6.29v-1.72h-35.97v1.72l7.67,6.29c1.04.85,1.64,2.13,1.64,3.47v129.66c0,1.35-.6,2.62-1.64,3.47l-7.67,6.3h0v1.72h35.97v-1.72h0Z"/>
+        <path class="cls-2" d="M566.9,361.64h-51.73v1.72l7.67,6.3c1.04.85,1.64,2.13,1.64,3.47v129.66c0,1.35-.6,2.62-1.64,3.47l-7.67,6.3v1.72h51.94c46.39,0,76.39-36.23,76.39-83.09,0-43.43-25.53-69.55-76.6-69.55ZM560.18,511.5h-19.79v-147.07h17.45c51.07,0,66.82,25.49,66.82,72.14,0,42.14-11.92,74.93-64.48,74.93Z"/>
+        <path class="cls-2" d="M462.81,363.36l7.66,6.29c1.04.85,1.64,2.13,1.64,3.47v129.66c0,1.35-.6,2.62-1.64,3.47l-7.67,6.3v1.72h35.97v-1.72l-7.66-6.29c-1.04-.85-1.64-2.13-1.64-3.47v-129.66c0-1.35.6-2.62,1.64-3.47l7.66-6.29v-1.72h-35.97v1.72Z"/>
+        <path class="cls-2" d="M422.77,363.36l7.67,6.29c1.04.85,1.64,2.13,1.64,3.47v118.58l-63.17-122.97,6.55-5.38v-1.72h-36.71v1.72l14.43,9.98,69.38,135.05c1.65,3.21,4.76,5.35,8.28,5.8v.09s1.25,0,1.25,0h11.77v-1.72l-6.74-11.91v-127.52c0-1.35.6-2.62,1.64-3.47l7.67-6.29v-1.72h-23.64v1.72Z"/>
+      </g>
+      <path class="cls-1" d="M316.93,428.48c0,.35-.42.52-.67.28-19.51-19.13-70.62,7.17-70.62,70.69v43.45c-70.06-14.24-124.85-79.37-124.85-157.56,0-27.12,6.38-52.66,17.63-75.05l81.99,36.55,15.7,6.99,1.23,4.95c1.1,4.38,6.22,6.35,9.96,3.79l.84-.56,8.15-5.55-23.66-10.54-94.67-42.21c-13.39-6.29-24.33-16.79-25.73-46.6l150.2,64.76c15.54,6.71,22.35,22.58,18.45,39.06,21.44,14.92,35.59,39.58,36.07,67.56Z"/>
+    </svg>
+    <span>Cúpula CEO 2026</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#evento">O Evento</a></li>
+    <li><a href="#publico">Público</a></li>
+    <li><a href="#cotas">Cotas</a></li>
+    <li><a href="#comparativo">Comparativo</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="badge">✦ Media & Partnership Deck</div>
+  <h1>Seja Parte da<br>Cúpula CEO 2026</h1>
+  <p class="hero-sub">Tenha acesso a um conhecimento relevante que transforma negócios e conecte sua marca aos maiores decisores. Com foco total na relevância dos locais — como o exclusivíssimo <strong>Hotel Royal Tulip</strong> em Brasília — criamos o ambiente perfeito para quem já provou que pode escalar.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">250</div><div class="stat-lbl">CEOs Participantes</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Leads Qualificados</div></div>
+    <div class="stat"><div class="stat-num">10h</div><div class="stat-lbl">De palestras e interação</div></div>
+    <div class="stat"><div class="stat-num">Brasília<br>DF</div><div class="stat-lbl">Local Premium</div></div>
+  </div>
+  <div class="scroll-hint">Role para saber mais</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── O EVENTO ── -->
+<section id="evento">
+  <div class="section-tag">O Evento</div>
+  <h2 class="section-title">O que é a Cúpula CEO?</h2>
+  <p class="section-lead">A Cúpula CEO é o encontro de liderança empresarial de maior curadoria do Brasil Central. Em um único dia de imersão, os maiores decisores do mercado se reúnem para debater estratégia, sucessão, finanças, internacionalização e liderança — longe do ruído do cotidiano operacional.</p>
+  
+  <div class="founders-quote" style="text-align: center; margin-bottom: 2rem; padding: 0 1rem;">
+    <p style="color: var(--text); font-size: 1.15rem; font-style: italic; line-height: 1.6;">"Nossa missão é construir a principal plataforma de conhecimento e conexão para quem já provou que pode crescer e agora precisa de pares estratégicos para alcançar o próximo nível."</p>
+  </div>
+  
+  <div class="founders" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+    <div style="position: relative; height: 500px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(201,168,76,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+      <img src="luiz_perfil.jpeg" alt="Luiz Portal" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.5s;">
+      <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.7) 50%, transparent 100%); padding: 3rem 1.5rem 1.5rem;">
+        <div style="font-size: 1.5rem; font-family: 'Playfair Display', serif; color: var(--gold); font-weight: bold;">Luiz Portal</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; margin-top: 0.3rem;">Idealizador</div>
+      </div>
+    </div>
+    <div style="position: relative; height: 500px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(201,168,76,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+      <img src="foto_ibrahim.jpeg" alt="Ibrahim Boufleur" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; transition: transform 0.5s;">
+      <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.7) 50%, transparent 100%); padding: 3rem 1.5rem 1.5rem;">
+        <div style="font-size: 1.5rem; font-family: 'Playfair Display', serif; color: var(--gold); font-weight: bold;">Ibrahim Boufleur</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; margin-top: 0.3rem;">Idealizador</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overview-grid">
+    <div class="overview-card">
+      <div class="overview-icon">🏨</div>
+      <h3>O Evento</h3>
+      <p><strong>20 de agosto de 2026</strong><br>Hotel Royal Tulip, Brasília – DF<br>Capacidade: 250 participantes</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-icon">🤖</div>
+      <h3>Júlio IA</h3>
+      <p><strong>Inteligência Artificial no Palco</strong><br>Co-produtor da experiência, diagnóstico personalizado e qualificação de leads em tempo real.</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-icon">🎤</div>
+      <h3>Painéis de Alto Nível</h3>
+      <p>8 painéis sobre <strong>Liderança, Finanças, Internacionalização, Tributário, Sucessão, Logística e Pessoas</strong> — com especialistas C-Level.</p>
+    </div>
+    <div class="overview-card">
+      <div class="overview-icon">🔗</div>
+      <h3>Networking Guiado</h3>
+      <p>Metodologia <strong>9+3</strong> — grupos de 6 CEOs, além de <strong>almoços e jantares exclusivos</strong> para maximizar conexões estratégicas reais.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── PÚBLICO ── -->
+<section id="publico">
+  <div class="section-tag">Público-Alvo</div>
+  <h2 class="section-title">Quem vai estar no evento</h2>
+  <p class="section-lead">Não são executivos assalariados — são os donos da decisão. CEOs, fundadores e diretores que comandam empresas com faturamento entre R$ 1 milhão e R$ 50 milhões por ano, em busca de pares estratégicos e soluções reais.</p>
+
+  <div class="audience-grid">
+    <div class="audience-pill"><div class="pct">60%</div><span>CEOs e Fundadores de empresas próprias</span></div>
+    <div class="audience-pill"><div class="pct">25%</div><span>Diretores e Sócios operacionais</span></div>
+    <div class="audience-pill"><div class="pct">15%</div><span>Empresários em processo de sucessão ou expansão</span></div>
+    <div class="audience-pill"><div class="pct">R$1M</div><span>Faturamento mínimo de empresas participantes</span></div>
+    <div class="audience-pill"><div class="pct">R$50M+</div><span>Faturamento do segmento premium (VP Club)</span></div>
+    <div class="audience-pill"><div class="pct">250</div><span>Vagas totais — ambiente controlado e qualificado</span></div>
+  </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── POR QUE PATROCINAR ── -->
+<section id="porque">
+  <div class="section-tag">Por que patrocinar</div>
+  <h2 class="section-title">O que o patrocínio entrega</h2>
+  <p class="section-lead">Não é um banner em um corredor. É acesso direto a quem decide — no ambiente em que ele está aberto a ouvir, conectar e comprar.</p>
+
+  <div class="why-list">
+    <div class="why-item">
+      <div class="why-icon">🎯</div>
+      <div>
+        <h4>Audiência 100% qualificada</h4>
+        <p>Cada participante é filtrado por faturamento, cargo e perfil decisório. Nenhum curioso. Apenas CEOs com poder de compra e intenção de crescer.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">🤝</div>
+      <div>
+        <h4>Networking de alto valor</h4>
+        <p>A dinâmica 9+3 força conexões entre grupos novos. Sua marca está presente no momento de maior abertura e receptividade do evento.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">📲</div>
+      <div>
+        <h4>Presença digital e física</h4>
+        <p>Logo em materiais impressos, apresentações em painel LED, redes sociais, e-mails de confirmação, totens e kit do participante.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">🔬</div>
+      <div>
+        <h4>Diagnóstico via IA (Júlio)</h4>
+        <p>A Cota Ouro tem integração com o Bot Júlio: sua solução pode ser recomendada em tempo real para participantes com a dor que você resolve.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">🏆</div>
+      <div>
+        <h4>Associação à marca Cúpula CEO</h4>
+        <p>Ser patrocinador da Cúpula CEO posiciona sua empresa como referência no ecossistema de liderança empresarial do Brasil Central.</p>
+      </div>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">📋</div>
+      <div>
+        <h4>Relatório pós-evento</h4>
+        <p>Cotas premium recebem relatório com dados agregados de perfil dos participantes, engajamento com os totens e principais dores mapeadas no evento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── COTAS ── -->
+<section id="cotas">
+  <div class="section-tag">Cotas de Patrocínio</div>
+  <h2 class="section-title">Escolha o seu nível de presença</h2>
+  <p class="section-lead">Apenas duas modalidades de patrocínio (Ouro e Prata) e uma de Apoio, garantindo exclusividade e alto impacto para as marcas parceiras. Todas com vagas limitadas.</p>
+
+  <div class="cotas-grid">
+
+    <!-- OURO -->
+    <div class="cota-card destaque">
+      <div class="cota-badge badge-ouro">✦ Ouro</div>
+      <div class="cota-nome cota-ouro-color">Cota Master</div>
+      <div class="cota-vagas">2 cotas disponíveis</div>
+      <div class="cota-price">R$ 25.000</div>
+      <div class="cota-price-obs">Exclusividade Setorial Garantida</div>
+      <div class="cota-sep"></div>
+      <ul class="cota-benefits">
+        <li>Exclusividade setorial (única empresa do seu segmento)</li>
+        <li>Logo Maior em todas as aplicações (Site, material impresso, on e off)</li>
+        <li>E-mail marketing oficial exclusivo e e-mail pós-evento aos participantes</li>
+        <li>4 credenciais para o evento</li>
+        <li>Menções no palco principal</li>
+        <li>Ativação de marca (sujeito à aprovação e validação da organização)</li>
+        <li>Direito de distribuir brindes</li>
+        <li>2 acessos exclusivos ao Almoço VIP</li>
+        <li>Direito a patrocinar uma experiência premium (no Almoço VIP ou Jantar)</li>
+        <li>Desconto em rede de hotéis parceiros (a confirmar)</li>
+      </ul>
+      <a href="#contato" class="cota-cta cta-ouro">Reservar Cota Ouro</a>
+    </div>
+
+    <!-- PRATA -->
+    <div class="cota-card" style="border: 1px solid rgba(192,192,192,0.2);">
+      <div class="cota-badge badge-prata">◈ Prata</div>
+      <div class="cota-nome cota-prata-color">Cota Executiva</div>
+      <div class="cota-vagas">Cotas limitadas</div>
+      <div class="cota-price">R$ 10.000</div>
+      <div class="cota-price-obs">Maior flexibilidade</div>
+      <div class="cota-sep"></div>
+      <ul class="cota-benefits">
+        <li>Logo Média nas aplicações (Site, Backdrop, materiais on e off)</li>
+        <li>Aplicação de logo nos e-mails marketing oficiais da organização</li>
+        <li>2 credenciais para o evento</li>
+        <li>Menções no palco principal</li>
+        <li>Direito de distribuir brindes</li>
+        <li>Desconto em rede de hotéis parceiros (a confirmar)</li>
+        <li class="dim">Ativações exclusivas de marca</li>
+        <li class="dim">Acesso ao Almoço VIP / Patrocínio de experiência</li>
+      </ul>
+      <a href="#contato" class="cota-cta cta-prata">Reservar Cota Prata</a>
+    </div>
+
+    <!-- APOIO -->
+    <div class="cota-card" style="border: 1px solid rgba(205,127,50,0.2);">
+      <div class="cota-badge badge-bronze">◇ Apoio</div>
+      <div class="cota-nome cota-bronze-color">Apoio Institucional</div>
+      <div class="cota-vagas">1 cota disponível</div>
+      <div class="cota-price" style="font-size: 1.4rem;">A partir de R$ 10k<br><span style="font-size: 0.8rem;">em produtos ou serviços</span></div>
+      <div class="cota-price-obs"> </div>
+      <div class="cota-sep"></div>
+      <ul class="cota-benefits">
+        <li>Logo Menor nos materiais e site do evento</li>
+        <li>Direito de distribuir brindes aos participantes</li>
+        <li>Desconto em rede de hotéis parceiros (a confirmar)</li>
+        <li class="dim">E-mail marketing e Menções no palco</li>
+        <li class="dim">Credenciais Extras</li>
+      </ul>
+      <a href="#contato" class="cota-cta cta-bronze">Reservar Cota Apoio</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── EXPERIÊNCIA E FLEXIBILIDADE ── -->
+<section id="experiencia">
+  <div class="section-tag">Negociação e Espaço</div>
+  <h2 class="section-title">Flexibilidade e Preview 3D</h2>
+  <p class="section-lead">Nós entendemos que o seu patrocínio precisa fazer sentido para o seu negócio. Por isso, oferecemos <strong>flexibilidade nas negociações</strong> de entrega. Fale com a nossa equipe caso queira adaptar os benefícios das cotas para a sua estratégia.</p>
+  
+    <div class="video-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; margin: 2rem auto 0; width: 100%;">
+    <p style="color: var(--gold); font-size: 1.1rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.5rem; text-align: center;">✦ Preview 3D Oficial do Evento ✦</p>
+    <div style="position: relative; width: 100%; max-width: 720px; aspect-ratio: 2 / 1; border: 2px solid var(--gold); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.9), 0 0 25px rgba(201,168,76,0.25); background: var(--dark2);">
+      <iframe id="panda-8d0e1d57-f84e-42a8-bbf4-dddde480545d" src="https://player-vz-9829707e-4bb.tv.pandavideo.com.br/embed/?v=8d0e1d57-f84e-42a8-bbf4-dddde480545d" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true fetchpriority="high"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── COMPARATIVO ── -->
+<section id="comparativo">
+  <div class="section-tag">Comparativo</div>
+  <h2 class="section-title">Todos os benefícios lado a lado</h2>
+  <p class="section-lead">Consulte a tabela completa e encontre a cota ideal para os seus objetivos comerciais.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40%">Benefício</th>
+          <th class="col-o">✦ Ouro</th>
+          <th class="col-p">◈ Prata</th>
+          <th class="col-b">◇ Apoio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="4">Visibilidade de Marca</td></tr>
+        <tr>
+          <td>Exclusividade Setorial</td>
+          <td class="check">✓ Sim</td>
+          <td class="cross">—</td>
+          <td class="cross">—</td>
+        </tr>
+        <tr>
+          <td>Tamanho da Logo nas Aplicações</td>
+          <td class="col-o">Maior (Destaque)</td>
+          <td class="col-p">Média</td>
+          <td class="col-b">Menor</td>
+        </tr>
+        <tr>
+          <td>E-mail Marketing Exclusivo</td>
+          <td class="check">✓ Oficial e Pós-evento</td>
+          <td class="cross">— (Logo em e-mails da org)</td>
+          <td class="cross">—</td>
+        </tr>
+        
+        <tr class="cat-row"><td colspan="4">Ingressos e Acessos</td></tr>
+        <tr>
+          <td>Credenciais do Evento</td>
+          <td class="col-o">4 Credenciais</td>
+          <td class="col-p">2 Credenciais</td>
+          <td class="cross">—</td>
+        </tr>
+        <tr>
+          <td>Acesso ao Almoço VIP</td>
+          <td class="col-o">2 Acessos</td>
+          <td class="cross">—</td>
+          <td class="cross">—</td>
+        </tr>
+
+        <tr class="cat-row"><td colspan="4">Ativações e Experiências</td></tr>
+        <tr>
+          <td>Menções no Palco Principal</td>
+          <td class="check">✓ Sim</td>
+          <td class="check">✓ Sim</td>
+          <td class="cross">—</td>
+        </tr>
+        <tr>
+          <td>Distribuição de Brindes</td>
+          <td class="check">✓ Sim</td>
+          <td class="check">✓ Sim</td>
+          <td class="check">✓ Sim</td>
+        </tr>
+        <tr>
+          <td>Ativação de Marca (sujeita a aprovação)</td>
+          <td class="check">✓ Sim</td>
+          <td class="cross">— (Negociável)</td>
+          <td class="cross">—</td>
+        </tr>
+        <tr>
+          <td>Patrocinar Experiência (Almoço/Jantar)</td>
+          <td class="check">✓ Sim</td>
+          <td class="cross">— (Negociável)</td>
+          <td class="cross">—</td>
+        </tr>
+        <tr>
+          <td>Desconto em Hotel Parceiro</td>
+          <td class="check">✓ (A confirmar)</td>
+          <td class="check">✓ (A confirmar)</td>
+          <td class="check">✓ (A confirmar)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+
+
+<!-- ── CRONOGRAMA ── -->
+<section id="cronograma">
+  <div class="section-tag">Cronograma</div>
+  <h2 class="section-title">Datas importantes</h2>
+  <p class="section-lead">Acompanhe os marcos do evento e as datas-limite para garantir sua presença nos materiais de divulgação.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="tl-date">Julho 2026</div>
+      <div class="tl-title">Prazo final para cotas</div>
+      <div class="tl-desc">Último dia para inclusão de logo e material nos materiais físicos do evento. Stand e ativações devem ser confirmados até esta data.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">19 de Agosto de 2026</div>
+      <div class="tl-title">Montagem e Jantares Exclusivos</div>
+      <div class="tl-desc">Hotel Royal Tulip, Brasília. Montagem dos stands e, à noite, jantares exclusivos para convidados selecionados.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">20 de Agosto de 2026</div>
+      <div class="tl-title">Cúpula CEO — O Evento</div>
+      <div class="tl-desc">Hotel Royal Tulip, Brasília – DF. Evento principal com 250 participantes. Programação completa com 8 painéis.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date">Setembro 2026</div>
+      <div class="tl-title">Relatório Pós-Evento (Cotas Premium)</div>
+      <div class="tl-desc">Entrega do relatório com dados agregados de perfil dos participantes, engajamento e principais dores mapeadas pelo Bot Júlio.</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── CTA FINAL ── -->
+<div class="cta-section" id="contato">
+  <div class="badge" style="margin:0 auto 2rem;">✦ Vagas Limitadas</div>
+  <h2>Pronto para ser parte da Cúpula CEO 2026?</h2>
+  <p>Entre em contato com nossa equipe comercial e reserve sua cota antes que o nível desejado se esgote. A Cota Ouro tem apenas 2 vagas disponíveis.</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/5561996993134?text=Quero%20ser%20patrocinador%20do%20C%C3%BApula%20CEO" class="btn-primary" target="_blank" rel="noopener noreferrer">Quero ser Patrocinador</a>
+  </div>
+  <div class="contacts-row">
+    <div class="contact-item">
+      <div class="contact-label">Organização</div>
+      <div class="contact-val">Catalyst Educação — ViDi</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Liderança Comercial</div>
+      <div class="contact-val">Luiz Portal & Ibrahim Boufleur</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Assessoria Corporativa</div>
+      <div class="contact-val">Patrícia Morais</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Cúpula CEO 2026</div>
+  <p>Catalyst Educação · CNPJ 64.465.973/0001-89 · Goiânia – GO</p>
+  <p style="color:rgba(201,168,76,0.5); font-size:.72rem;">Documento interno — versão para apresentação a patrocinadores · Maio 2026</p>
+</footer>
+
+</body>
+</html>
